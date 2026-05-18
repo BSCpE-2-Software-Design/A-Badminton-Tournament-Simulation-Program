@@ -9,18 +9,18 @@ class Player {
 private:
     int id;
     std::string name;
-    int skillLevel;    // 1-10
-    int stamina;       // 1-10
+    int skillLevel;    
+    int stamina;       
     int wins;
     int losses;
     int totalPoints;
-    bool isActive;     // For tournament participation
+    bool isActive;     
 
 public:
     Player();
     Player(int id, const std::string& name, int skillLevel, int stamina);
 
-    // Getters
+    
     int getId() const;
     std::string getName() const;
     int getSkillLevel() const;
@@ -30,7 +30,7 @@ public:
     int getTotalPoints() const;
     bool getIsActive() const;
 
-    // Setters
+    
     void setWins(int w);
     void setLosses(int l);
     void setTotalPoints(int p);
@@ -39,8 +39,8 @@ public:
     void addPoints(int points);
     void setActive(bool active);
 
-    // Display
+    
     void display() const;
 };
 
-#endif // PLAYER_H
+#endif 

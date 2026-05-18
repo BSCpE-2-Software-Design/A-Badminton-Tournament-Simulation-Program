@@ -8,8 +8,8 @@
 class Match {
 public:
     enum MatchType {
-        SINGLES,  // 1v1
-        DOUBLES   // 2v2
+        SINGLES,  
+        DOUBLES   
     };
 
     enum MatchStatus {
@@ -20,8 +20,8 @@ public:
 
 private:
     MatchType type;
-    std::vector<Player> teamA;  // 1 or 2 players
-    std::vector<Player> teamB;  // 1 or 2 players
+    std::vector<Player> teamA;  
+    std::vector<Player> teamB;  
     int scoreA;
     int scoreB;
     MatchStatus status;
@@ -31,7 +31,7 @@ public:
     Match();
     Match(int id, MatchType type, const std::vector<Player>& tA, const std::vector<Player>& tB);
 
-    // Getters
+    
     MatchType getType() const;
     std::vector<Player> getTeamA() const;
     std::vector<Player> getTeamB() const;
@@ -40,21 +40,21 @@ public:
     MatchStatus getStatus() const;
     int getMatchId() const;
 
-    // Setters
+    
     void setScoreA(int score);
     void setScoreB(int score);
     void setStatus(MatchStatus s);
     void addScoreA(int points);
     void addScoreB(int points);
 
-    // Methods
+    
     std::vector<Player> getWinnerTeam() const;
     std::vector<Player> getLoserTeam() const;
     bool isCompleted() const;
 
-    // Display
+    
     void display() const;
     void displayResult() const;
 };
 
-#endif // MATCH_H
+#endif 
