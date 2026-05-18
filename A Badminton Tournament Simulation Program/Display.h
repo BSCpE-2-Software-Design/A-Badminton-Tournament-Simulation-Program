@@ -8,7 +8,6 @@
 
 class Display {
 public:
-    // Static display methods
     static void displayWelcome();
     static void displayMainMenu();
     static void displayModeSelection();
@@ -23,4 +22,4 @@ public:
     static void pressEnter();
 };
 
-#endif // DISPLAY_H
+#endif 
