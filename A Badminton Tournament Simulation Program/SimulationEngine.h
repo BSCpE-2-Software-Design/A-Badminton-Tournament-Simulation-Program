@@ -20,12 +20,12 @@ private:
 public:
     SimulationEngine();
 
-    // Observer pattern
+  
     void attach(IMatchObserver* observer);
     void detach(IMatchObserver* observer);
     void notifyObservers(const Match& match);
 
-    // Simulation
+
     void simulateMatch(Match& match);
 
 private:
@@ -33,4 +33,4 @@ private:
     int generateRandomVariance();
 };
 
-#endif // SIMULATION_ENGINE_H
+#endif

@@ -9,25 +9,21 @@
 
 class StandingTracker : public IMatchObserver {
 private:
-    std::map<int, Player> playerStats;  // Map player ID to their updated stats
+    std::map<int, Player> playerStats;  
 
 public:
     StandingTracker();
 
-    // From IMatchObserver
     void onMatchCompleted(const Match& match) override;
 
-    // Update player stats
     void updatePlayerStats(const Player& player);
     void addPlayer(const Player& player);
 
-    // Getters
     std::vector<Player> getSortedStandings() const;
     Player getPlayerStats(int playerId) const;
 
-    // Display
     void printLeaderboard() const;
     void printDetailed() const;
 };
 
-#endif // STANDING_TRACKER_H
+#endif
