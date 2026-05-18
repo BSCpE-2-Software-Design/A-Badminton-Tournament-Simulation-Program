@@ -28,4 +28,4 @@ public:
     void displaySchedule() const;
 };
 
-#endif // SCHEDULE_H
+#endif
