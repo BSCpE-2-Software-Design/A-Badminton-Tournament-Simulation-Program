@@ -6,14 +6,14 @@
 StandingTracker::StandingTracker() {}
 
 void StandingTracker::onMatchCompleted(const Match& match) {
-    // Get winner and loser teams
+   
     std::vector<Player> winners = match.getWinnerTeam();
     std::vector<Player> losers = match.getLoserTeam();
 
     int winnerScore = (match.getScoreA() > match.getScoreB()) ? match.getScoreA() : match.getScoreB();
     int loserScore = (match.getScoreA() < match.getScoreB()) ? match.getScoreA() : match.getScoreB();
 
-    // Update winner stats
+    
     for (const auto& winner : winners) {
         int playerId = winner.getId();
 
@@ -29,7 +29,7 @@ void StandingTracker::onMatchCompleted(const Match& match) {
         }
     }
 
-    // Update loser stats
+   
     for (const auto& loser : losers) {
         int playerId = loser.getId();
 
@@ -63,7 +63,7 @@ std::vector<Player> StandingTracker::getSortedStandings() const {
         standings.push_back(pair.second);
     }
 
-    // Sort by wins (descending), then by total points (descending)
+ 
     std::sort(standings.begin(), standings.end(),
         [](const Player& a, const Player& b) {
             if (a.getWins() != b.getWins()) {

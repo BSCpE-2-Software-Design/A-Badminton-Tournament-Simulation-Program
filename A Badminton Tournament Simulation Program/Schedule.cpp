@@ -9,7 +9,6 @@ void Schedule::generateRoundRobinSingles(const std::vector<Player>& players) {
     matches.clear();
     matchCounter = 0;
 
-    // Generate all unique pairs (i, j) where i < j
     for (size_t i = 0; i < players.size(); i++) {
         for (size_t j = i + 1; j < players.size(); j++) {
             std::vector<Player> teamA = { players[i] };
@@ -30,8 +29,7 @@ void Schedule::generateRoundRobinDoubles(const std::vector<Player>& players) {
         return;
     }
 
-    // Generate all unique pairs of pairs
-    // For each combination of 2 players from first half vs 2 players from second half
+    
     int n = players.size();
 
     for (int i = 0; i < n; i++) {
@@ -41,7 +39,7 @@ void Schedule::generateRoundRobinDoubles(const std::vector<Player>& players) {
                 for (int l = k + 1; l < n; l++) {
                     if (l == i || l == j) continue;
 
-                    // Avoid duplicate matches (team A vs B same as B vs A)
+                    
                     if (i < k) {
                         std::vector<Player> teamA = { players[i], players[j] };
                         std::vector<Player> teamB = { players[k], players[l] };
